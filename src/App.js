@@ -1,9 +1,15 @@
 import React from 'react';
+import Video from './Video';
 
 const App = () => {
   return (
-    <div>
-      <h1>Tiktok clone</h1>
+    <div className='app'>
+      <div className='app_videos'>
+        <Video />
+        <Video />
+        <Video />
+        <Video />
+      </div>
     </div>
   );
 };
