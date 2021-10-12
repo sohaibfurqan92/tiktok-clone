@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 
 const Video = () => {
+  const [play, setPlay] = useState(false);
+
+  const videoRef = useRef(null);
+
+  const onVideoPress = () => {
+    setPlay(!play);
+    if (play) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+  };
+
   return (
     <div className='video'>
       <video
-        src='https://v39-eu.tiktokcdn.com/c407606226e6be6d0e2c6e53202f7a92/61560a10/video/tos/alisg/tos-alisg-pve-0037/3307d00d0a7b4c3dae6118a9ea899e8b/?a=1180&br=5860&bt=2930&cd=0%7C0%7C1&ch=0&cr=0&cs=0&cv=1&dr=3&ds=3&er=&ft=98CxReTx4kag3&l=202109301303180101890651052F0F244B&lr=tiktok&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M3Y6eWk6ZjpwODMzODgzNEApZDw4OjVpZ2U3N2U7MzVmO2dzaWpqcjRnZTNgLS1kLy1zc2MtMF9gMC4xYjY1NDEzMGI6Yw%3D%3D&vl=&vr='
+        src='https://v39-eu.tiktokcdn.com/92b9ee95a4f7ee889b112fecc1840391/6165d0c3/video/tos/useast2a/tos-useast2a-ve-0068c004/a5bb44a416824f6f90f439e95d16bf5a/?a=1233&br=1782&bt=891&cd=0%7C0%7C1&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=98CxReTx4kag3&l=2021101212152301018907221650056E7D&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=M3V2dmc6Znc6ODMzNzczM0ApOjQ6ZjM5PDs4N2RoODppZ2dxbGovcjRnbWZgLS1kMTZzczI2XzJgMzU1Li9eMjVeYjU6Yw%3D%3D&vl=&vr='
         className='video-player'
         loop
+        ref={videoRef}
+        onClick={onVideoPress}
       ></video>
     </div>
   );
