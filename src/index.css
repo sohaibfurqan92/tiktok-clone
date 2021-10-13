@@ -50,3 +50,31 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.videoFooter {
+  position: relative;
+  bottom: 100px;
+  color: #fff;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.videoFooter_text {
+  flex: 1;
+}
+
+.videoFooter_record {
+  animation: spinTheRecord infinite 5s linear;
+  height: 50px;
+  filter: invert(1);
+}
+
+@keyframes spinTheRecord {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
