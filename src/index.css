@@ -90,6 +90,19 @@ html {
   width: 60%;
 }
 
+/* sidebar */
+.videoSidebar {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  color: white;
+}
+
+.sidebar_button {
+  padding: 20px;
+  text-align: center;
+}
+
 @keyframes spinTheRecord {
   from {
     transform: rotate(0deg);
