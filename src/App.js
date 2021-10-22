@@ -7,7 +7,7 @@ const App = () => {
 
   useEffect(() => {
     db.collection('videos').onSnapshot((snapshot) =>
-      setVideos([snapshot.docs.map((doc) => doc.data())])
+      setVideos(snapshot.docs.map((doc) => doc.data()))
     );
   }, [videos]);
   return (
